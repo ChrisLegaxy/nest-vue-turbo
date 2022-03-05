@@ -1,0 +1,12 @@
+{
+  "extends": "./tsconfig.base.json",
+  "schema": "https://json.schemastore.org/tsconfig",
+  "display": "Vue JS",
+  "compilerOptions": {
+    "target": "esnext",
+    "useDefineForClassFields": true,
+    "module": "esnext",
+    "jsx": "preserve",
+    "lib": ["esnext", "dom"]
+  },
+}
