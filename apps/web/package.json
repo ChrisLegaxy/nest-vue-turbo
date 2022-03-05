@@ -8,12 +8,17 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "vue": "^3.2.25"
+    "vue": "^3.2.25",
+    "vue-router": "^4.0.13",
+    "vuex": "^4.0.2"
   },
   "devDependencies": {
+    "@types/node": "^17.0.21",
     "@vitejs/plugin-vue": "^2.2.0",
     "tsconfig": "*",
     "typescript": "^4.5.4",
+    "unplugin-auto-import": "^0.6.1",
+    "unplugin-vue-components": "^0.17.21",
     "vite": "^2.8.0",
     "vue-tsc": "^0.29.8"
   }
