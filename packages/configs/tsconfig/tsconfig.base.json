@@ -23,7 +23,6 @@
     "allowSyntheticDefaultImports": true,
     "noImplicitAny": false,
     "noFallthroughCasesInSwitch": true,
-    "incremental": true,
     "strictNullChecks": false,
     "strictBindCallApply": false
   },
