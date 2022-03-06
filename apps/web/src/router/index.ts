@@ -3,10 +3,13 @@ import { createRouter, createWebHistory } from "vue-router";
 import { authGuard } from "./route-guards/auth.guard";
 import { isAuthicatedGuard } from "./route-guards/is-authenticated.guard";
 
+import Login from "@/pages/Login.vue";
+import Home from "@/pages/Home.vue";
+
 export const routes: RouteRecordRaw[] = [
   {
     path: "/login",
-    component: import(/* webpackChunkName: "LoginPage" */ "@/pages/Login.vue"),
+    component: Login,
     beforeEnter: isAuthicatedGuard,
   },
   {
@@ -17,8 +20,7 @@ export const routes: RouteRecordRaw[] = [
   },
   {
     path: "/",
-    component: () =>
-      import(/* webpackChunkName: "HomePage" */ "@/pages/Home.vue"),
+    component: Home,
     beforeEnter: authGuard,
   },
   {
