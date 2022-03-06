@@ -15,14 +15,14 @@ export default defineConfig({
     AutoImport({
       resolvers: [],
       imports: ["vue", "vue-router", "vuex"],
-      dts: "src/auto-imports.d.ts",
+      dts: "src/@types/auto-imports.d.ts",
     }),
 
     Component({
       resolvers: [],
       extensions: ["vue"],
       deep: true,
-      dts: "src/components.d.ts",
+      dts: "src/@types/components.d.ts",
     }),
 
     vue(),

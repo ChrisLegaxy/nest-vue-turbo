@@ -7,6 +7,11 @@
     "useDefineForClassFields": true,
     "module": "esnext",
     "jsx": "preserve",
-    "lib": ["esnext", "dom"]
+    "lib": [
+      "esnext",
+      "dom",
+      "dom.iterable",
+      "scripthost"
+    ]
   },
 }
