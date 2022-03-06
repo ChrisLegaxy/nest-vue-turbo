@@ -1,32 +1,25 @@
 <script lang="ts" setup>
-import { useUserStore } from "@/stores/user";
-
-import shogun from "@/assets/images/Shogun.png";
 import router from "@/router";
+import ganyu from "@/assets/images/Ganyu.png";
 
-const userStore = useUserStore();
-
-const user = userStore.user;
-
-const handleLogout = async() => {
-  await userStore.logout();
-  router.push("/login");
+const handleRedirect = async() => {
+  router.push("/");
 };
 </script>
 <template>
   <div class="h-screen grid place-items-center">
     <div class="max-w-3xl w-full p-6">
       <div class="aspect-[16/8] flex justify-center">
-        <img class="h-full" :src="shogun">
+        <img class="h-full" :src="ganyu">
       </div>
 
       <div>
         <div class="text-6xl font-bold text-white text-center my-10">
-          Welcome, {{ user.name }}
+          404 Not Found
         </div>
         <div class="text-center">
-          <button class="daisy-btn daisy-btn-primary" @click="handleLogout">
-            Logout
+          <button class="daisy-btn daisy-btn-primary" @click="handleRedirect">
+            Go Back
           </button>
         </div>
       </div>

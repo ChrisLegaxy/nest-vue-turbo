@@ -1,5 +1,22 @@
 <script lang="ts" setup>
+import type { LoginUserDto } from "api/src/modules/auth/dto/auth.dto";
 import yaeMiko from "@/assets/images/YaeMiko.png";
+
+import { useUserStore } from "@/stores/user";
+
+import router from "@/router";
+
+const userStore = useUserStore();
+
+const loginData: LoginUserDto = {
+  email: "",
+  password: "",
+};
+
+const handleLogin = async() => {
+  await userStore.login(loginData);
+  router.push("/");
+};
 </script>
 
 <template>
@@ -8,12 +25,16 @@ import yaeMiko from "@/assets/images/YaeMiko.png";
       <div class="aspect-[16/8] flex justify-center">
         <img class="h-full" :src="yaeMiko">
       </div>
-      <form class="daisy-form-control w-full max-w-xl inline-block text-white">
+      <form
+        class="daisy-form-control w-full max-w-xl inline-block text-white"
+        @submit.prevent="handleLogin"
+      >
         <div>
           <label class="daisy-label">
             <span class="daisy-label-text">Email</span>
           </label>
           <input
+            v-model="loginData.email"
             type="text"
             placeholder="Email"
             class="daisy-input daisy-input-bordered w-full"
@@ -25,13 +46,17 @@ import yaeMiko from "@/assets/images/YaeMiko.png";
             <span class="daisy-label-text">Password</span>
           </label>
           <input
+            v-model="loginData.password"
             type="password"
             placeholder="Password"
             class="daisy-input daisy-input-bordered w-full"
             required
           >
           <label class="daisy-label justify-end mt-2">
-            <span class="daisy-label-text cursor-pointer" @click="$router.push('/register')">Register?</span>
+            <span
+              class="daisy-label-text cursor-pointer"
+              @click="$router.push('/register')"
+            >Register?</span>
           </label>
         </div>
         <div class="mt-4 text-right">
