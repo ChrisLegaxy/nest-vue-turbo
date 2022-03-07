@@ -33,5 +33,6 @@
     "unplugin-vue-components": "^0.17.21",
     "vite": "^2.8.0",
     "vue-tsc": "^0.29.8"
-  }
+  },
+  "packageManager": "yarn@1.22.17"
 }
