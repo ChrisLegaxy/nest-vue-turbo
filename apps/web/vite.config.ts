@@ -29,12 +29,26 @@ export default defineConfig({
     vue(),
 
     VitePWA({
+      mode: "development",
       registerType: "autoUpdate",
-      includeAssets: ["favicon.svg", "safari-pinned-tab.svg"],
+      includeAssets: ["favicon.svg", "safari-pinned-tab.svg", "robot.txt"],
+      filename: "claims-sw.ts",
+      base: "/",
+      srcDir: "src",
+      strategies: "injectManifest",
+      devOptions: {
+        enabled: false,
+        /* when using generateSW the PWA plugin will switch to classic */
+        type: "module",
+        navigateFallback: "index.html",
+      },
       manifest: {
         name: "Vue Monorepo",
         short_name: "Vue Monorepo",
         theme_color: "#ffffff",
+        start_url: "/",
+        display: "standalone",
+        background_color: "#ffffff",
         icons: [
           {
             src: "/pwa-192x192.png",

@@ -6,7 +6,8 @@
     "dev": "vite",
     "prebuild": "rimraf dist",
     "build": "vue-tsc --noEmit && vite build",
-    "preview": "vite preview",
+    "serve": "vite preview",
+    "https-preview": "PORT=4433 serve dist",
     "lint": "eslint \"**/*.{vue,ts,js}\"",
     "lint:fix": "eslint \"**/*.{vue,ts,js}\" --fix"
   },
@@ -25,6 +26,7 @@
     "@types/node": "^17.0.21",
     "@vitejs/plugin-vue": "^2.2.0",
     "autoprefixer": "^10.4.2",
+    "https-localhost": "^4.7.1",
     "postcss": "^8.4.7",
     "sass": "^1.49.9",
     "tailwindcss": "^3.0.23",
@@ -34,7 +36,8 @@
     "unplugin-vue-components": "^0.17.21",
     "vite": "^2.8.0",
     "vite-plugin-pwa": "^0.11.13",
-    "vue-tsc": "^0.29.8"
+    "vue-tsc": "^0.29.8",
+    "workbox-precaching": "^6.5.1"
   },
   "packageManager": "yarn@1.22.17"
 }
