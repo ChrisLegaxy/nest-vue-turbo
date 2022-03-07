@@ -1,77 +1,103 @@
-# Turborepo starter
 
-This is an official Yarn v1 starter turborepo.
+# Monorepo with Turborepo (Nest & Vue)
 
-## What's inside?
+This project is a minimal boilerplate code setup in 
+monorepo architecture using [Turborepo](https://turborepo.org/), containing 2 applications: Vue3 Frontend & Nest JS Backend.
 
-This turborepo uses [Yarn](https://classic.yarnpkg.com/lang/en/) as a package manager. It includes the following packages/apps:
+## Deployments
+- Frontend: https://nest-vue-turbo.vercel.app
+- Backend: https://nest-vue-turbo.herokuapp.com/api
 
-### Apps and Packages
+## Core Features
 
-- `docs`: a [Next.js](https://nextjs.org) app
-- `web`: another [Next.js](https://nextjs.org) app
-- `ui`: a stub React component library shared by both `web` and `docs` applications
-- `config`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
-- `tsconfig`: `tsconfig.json`s used throughout the monorepo
+***Frontend***
+- Vite
+- PWA Support
+- Route Guards
+- Pinia State Management
 
-Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
+***Backend***
+- Core Authentication
+- JWT Access Token & HTTPOnly Cookie Refresh Token
+- Nest JS Route Guards
+- Prisma
 
-### Utilities
+## Pre-Requisites
+- Node
+- Yarn
+- Docker & Docker-Compose
 
-This turborepo has some additional tools already setup for you:
+## Installation
 
-- [TypeScript](https://www.typescriptlang.org/) for static type checking
-- [ESLint](https://eslint.org/) for code linting
-- [Prettier](https://prettier.io) for code formatting
+Can copy all this and execute to clone & install
+
+```bash
+  git clone https://github.com/ChrisLegaxy/nest-vue-turbo.git \
+  && cd nest-vue-turbo \
+  && yarn
+```
 
 ## Setup
 
-This repository is used in the `npx create-turbo` command, and selected when choosing which package manager you wish to use with your monorepo (Yarn).
+```bash
+  # copy and replace with your env config
+  copy .env.sample .env
 
-### Build
+  # due to prisma
+  copy ./apps/api/.env.sample ./apps/api/.env
 
-To build all apps and packages, run the following command:
+  # due to vite
+  copy ./apps/web/.env.sample ./apps/web/.env
 
-```
-cd my-turborepo
-yarn run build
-```
-
-### Develop
-
-To develop all apps and packages, run the following command:
-
-```
-cd my-turborepo
-yarn run dev
+  docker-compose up -d
 ```
 
-### Remote Caching
+## Running in DEV
 
-Turborepo can use a technique known as [Remote Caching (Beta)](https://turborepo.org/docs/features/remote-caching) to share cache artifacts across machines, enabling you to share build caches with your team and CI/CD pipelines.
+```bash
+  # this should bring everything up 
+  yarn dev
 
-By default, Turborepo will cache locally. To enable Remote Caching (Beta) you will need an account with Vercel. If you don't have an account you can [create one](https://vercel.com/signup), then enter the following commands:
+  # only web
+  yarn dev --scope=web
 
-```
-cd my-turborepo
-npx turbo login
-```
-
-This will authenticate the Turborepo CLI with your [Vercel account](https://vercel.com/docs/concepts/personal-accounts/overview).
-
-Next, you can link your Turborepo to your Remote Cache by running the following command from the root of your turborepo:
-
-```
-npx turbo link
+  # only api
+  yarn dev --scope=api
 ```
 
-## Useful Links
+## Linting
 
-Learn more about the power of Turborepo:
+```bash
+  yarn lint
+```
 
-- [Pipelines](https://turborepo.org/docs/features/pipelines)
-- [Caching](https://turborepo.org/docs/features/caching)
-- [Remote Caching (Beta)](https://turborepo.org/docs/features/remote-caching)
-- [Scoped Tasks](https://turborepo.org/docs/features/scopes)
-- [Configuration Options](https://turborepo.org/docs/reference/configuration)
-- [CLI Usage](https://turborepo.org/docs/reference/command-line-reference)
+## Build
+
+```bash
+  yarn build
+```
+
+## Remote Caching
+
+```bash
+  npx turbo login
+  
+  npx turbo link
+```
+
+## Credits & References
+ - [Turbo Repo Docs](https://turborepo.org)
+ - [Amazing Turborepo Walkthrough](https://www.youtube.com/watch?v=YX5yoApjI3M&t=1s)
+ - [Nice Tutorial Both Part 1 & 2](https://www.youtube.com/watch?v=YQLw5kJ1yrQ&t=1005s)
+ - [Vite PWA Official & Sample on GitHub](https://vite-plugin-pwa.netlify.app)
+ - [Vite PWA Guide](https://rubenr.dev/en/pwa-vite)
+ - [Pinia](https://pinia.vuejs.org) (Might taken over VueX, I'm favoring this one)
+
+
+## Author
+
+> Chris Legaxy/Chris Van
+> 
+> Contact: chris.legaxy@gmail.com | chrisvan.vshmr@gmail.com
+> 
+> Website: https://chrisvan.netlify.app
