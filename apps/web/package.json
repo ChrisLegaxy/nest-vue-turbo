@@ -4,6 +4,7 @@
   "version": "0.0.0",
   "scripts": {
     "dev": "vite",
+    "prebuild": "rimraf dist",
     "build": "vue-tsc --noEmit && vite build",
     "preview": "vite preview",
     "lint": "eslint \"**/*.{vue,ts,js}\"",
@@ -32,6 +33,7 @@
     "unplugin-auto-import": "^0.6.1",
     "unplugin-vue-components": "^0.17.21",
     "vite": "^2.8.0",
+    "vite-plugin-pwa": "^0.11.13",
     "vue-tsc": "^0.29.8"
   },
   "packageManager": "yarn@1.22.17"
