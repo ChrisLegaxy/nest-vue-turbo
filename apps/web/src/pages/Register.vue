@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import type { RegisterUserDto } from "api/src/modules/auth/dto/auth.dto";
-import kequing from "@/assets/images/Kequing.png";
+import kequing from "@/assets/images/Kequing.webp";
 
 import { useUserStore } from "@/stores/user";
 

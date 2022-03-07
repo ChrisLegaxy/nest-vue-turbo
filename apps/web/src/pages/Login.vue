@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import type { LoginUserDto } from "api/src/modules/auth/dto/auth.dto";
-import yaeMiko from "@/assets/images/YaeMiko.png";
+import yaeMiko from "@/assets/images/YaeMiko.webp";
 
 import { useUserStore } from "@/stores/user";
 

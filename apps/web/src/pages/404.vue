@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import router from "@/router";
-import ganyu from "@/assets/images/Ganyu.png";
+import ganyu from "@/assets/images/Ganyu.webp";
 
 const handleRedirect = async() => {
   router.push("/");

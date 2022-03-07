@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { useUserStore } from "@/stores/user";
 
-import shogun from "@/assets/images/Shogun.png";
+import shogun from "@/assets/images/Shogun.webp";
 import router from "@/router";
 
 const userStore = useUserStore();
