@@ -48,7 +48,7 @@ export class AuthController {
   }
 
   @ApiBody({
-    type: () => RegisterUserDto,
+    type: () => LoginUserDto,
   })
   @ApiResponse({ status: 200, description: "User logged in successfully" })
   @ApiResponse({ status: 401, description: "Unauthorized" })
